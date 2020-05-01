@@ -1,19 +1,16 @@
 import discord
 import os
 import request
-import flask
-
-Token = os.environ("DISCORD_BOT_TOKEN")
 
 class code_runner(discord.Client):
-
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
 
     async def on_Message(self,message):
-        if message.author==self.user:
+        if message.author.bot:
             return
         
+        print('Hello')
         if message.content.startswith('!run'):
             await message.channel.send('Hello')
 
@@ -22,5 +19,7 @@ class code_runner(discord.Client):
 #     cre = 'create'
 #     detail = 'get_detail'
 #     response = request.post()
-app = code_runner()
-app.run(Token)
+if __name__ == "__main__":
+    Token = os.environ["DISCORD_BOT_TOKEN"]
+    app = code_runner()
+    app.run(Token)

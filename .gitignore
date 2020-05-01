@@ -1,3 +1,4 @@
 .vscode
 code_runner.code-workspace
 discord_bot/
+test.py
