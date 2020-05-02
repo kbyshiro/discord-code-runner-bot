@@ -68,15 +68,13 @@ class code_runner(discord.Client):
 
             r_det = run_code(code,language)
             if r_det['stderr']:
-                res = '''```
-                    {}
-                        ```'''.format(r_det['stderr'])
+                res = '```\n{}\n```'\
+                    .format(r_det['stderr'])
                 return await send(res)
+                
             if r_det['stdout']:
-                res = '''```
-                    {}
-                    Runnnig time: {}
-                        ```'''.format(r_det['stdout'],r_det['time'])
+                res = '```\n{}\nRunnnig time: {}\n```'\
+                    .format(r_det['stdout'],r_det['time'])
                 return await send(res)
 
 if __name__ == "__main__":
