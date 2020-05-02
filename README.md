@@ -44,6 +44,3 @@ Supporting lauguages are shown in blow.
 
 This bot uses [paiza.IO](http://api.paiza.io/docs/swagger/#!/runners/Runners_get_status) API.
 For more detail, See the paiza.IO references.
-
-
-$$ \epsilon $$
